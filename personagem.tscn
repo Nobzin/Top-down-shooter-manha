@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cyp57prbtsbsw"]
+
+[ext_resource type="Texture2D" uid="uid://s2lkunxvhjx7" path="res://assets/Content/Skins.png" id="1_s304p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s304p"]
+
+[node name="personagem" type="CharacterBody2D" unique_id=748801476]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1724656718]
+texture = ExtResource("1_s304p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=557425713]
+shape = SubResource("CircleShape2D_s304p")
