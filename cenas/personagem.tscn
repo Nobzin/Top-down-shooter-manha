@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cyp57prbtsbsw"]
+
+[ext_resource type="Texture2D" uid="uid://s2lkunxvhjx7" path="res://assets/Content/Skins.png" id="1_roqey"]
+[ext_resource type="Script" uid="uid://casy73cqmatdh" path="res://scripts/personagem.gd" id="1_tyg5f"]
+[ext_resource type="Texture2D" uid="uid://c07qhf4jyrc5a" path="res://assets/Content/Weapons.png" id="3_c6r7t"]
+[ext_resource type="Texture2D" uid="uid://b57wqg62gay6d" path="res://assets/Content/marston_hat-removebg-preview.png" id="4_d05dr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s304p"]
+radius = 95.131485
+
+[node name="personagem" type="CharacterBody2D" unique_id=748801476]
+script = ExtResource("1_tyg5f")
+
+[node name="corpo" type="Node2D" parent="." unique_id=1809317488]
+rotation = -1.5707964
+
+[node name="braco_direito" type="Sprite2D" parent="corpo" unique_id=2120246477]
+texture_filter = 1
+position = Vector2(-56, 78)
+rotation = -0.13888896
+texture = ExtResource("1_roqey")
+region_enabled = true
+region_rect = Rect2(1421, 860, 103, 199)
+
+[node name="braco_esquerdo" type="Sprite2D" parent="corpo" unique_id=1416485089]
+texture_filter = 1
+position = Vector2(50.000004, 86)
+rotation = -0.08160365
+texture = ExtResource("1_roqey")
+region_enabled = true
+region_rect = Rect2(1601, 843, 132, 243)
+
+[node name="corpo" type="Sprite2D" parent="corpo" unique_id=1978636122]
+texture_filter = 1
+texture = ExtResource("1_roqey")
+region_enabled = true
+region_rect = Rect2(973, 1005, 197, 105)
+
+[node name="cabeca" type="Sprite2D" parent="corpo" unique_id=1567450863]
+texture_filter = 1
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_roqey")
+region_enabled = true
+region_rect = Rect2(1187, 834, 165, 165)
+
+[node name="gun" type="Sprite2D" parent="corpo" unique_id=356928323]
+texture_filter = 1
+position = Vector2(-3.0000002, 248)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_c6r7t")
+region_enabled = true
+region_rect = Rect2(1478, 445, 71, 365)
+
+[node name="hat" type="Sprite2D" parent="corpo" unique_id=1259197536]
+texture_filter = 1
+position = Vector2(4.000001, -19)
+scale = Vector2(0.46, 0.46)
+texture = ExtResource("4_d05dr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=557425713]
+shape = SubResource("CircleShape2D_s304p")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=304300565]
+zoom = Vector2(0.3, 0.3)

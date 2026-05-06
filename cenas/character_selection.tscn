@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://tpu7v8yx1xid"]
+
+[ext_resource type="Texture2D" uid="uid://dxlg63t7nj16w" path="res://assets/marston aura.png" id="1_rdr24"]
+[ext_resource type="Texture2D" uid="uid://dyehfd07fmpd2" path="res://assets/morgan.png" id="2_ewtd7"]
+[ext_resource type="Texture2D" uid="uid://bwxyl4r8lq64c" path="res://assets/Dutch_cleanup-removebg-preview.png" id="4_3bf4e"]
+
+[node name="CHARACTER_SELECTION" type="Node2D" unique_id=113596289]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=455055965]
+offset_left = -967.0
+offset_top = -545.0
+offset_right = 2193.0
+offset_bottom = 1203.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=620881208]
+offset_left = -794.0
+offset_top = -72.0
+offset_right = 1998.0
+offset_bottom = 838.0
+color = Color(0.22862363, 0, 0.0048616934, 1)
+
+[node name="MarstonAura" type="Sprite2D" parent="." unique_id=1067763181]
+position = Vector2(-364, 430)
+texture = ExtResource("1_rdr24")
+
+[node name="Morgan" type="Sprite2D" parent="." unique_id=170688467]
+position = Vector2(507, 343)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_ewtd7")
+
+[node name="DutchCleanupRemovebgPreview" type="Sprite2D" parent="." unique_id=2074552543]
+position = Vector2(1590, 323)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_3bf4e")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=937942556]
+position = Vector2(599, 320)
+zoom = Vector2(0.4, 0.4)
