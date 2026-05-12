@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn0pfmdl2cdel"
-path="res://.godot/imported/PLAY RDR.png-712f5ff36b0c0d8b1417d31138faf632.ctex"
+uid="uid://dpa7nwuebasli"
+path="res://.godot/imported/SETA.png-831edbc27848dbdf5ee889b8f42e31be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PLAY RDR.png"
-dest_files=["res://.godot/imported/PLAY RDR.png-712f5ff36b0c0d8b1417d31138faf632.ctex"]
+source_file="res://assets/Content/SETA.png"
+dest_files=["res://.godot/imported/SETA.png-831edbc27848dbdf5ee889b8f42e31be.ctex"]
 
 [params]
 

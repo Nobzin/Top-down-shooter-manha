@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn8fflx20n4mx"
-path="res://.godot/imported/WILD WEST REDEMPTION RDR.png-8785d848bdb50b53124afe9d7430436f.ctex"
+uid="uid://cw5gkirpg3ik1"
+path="res://.godot/imported/OPTIONS RDR.png-bcd5c44eb7ed27819be8a91e4d27f166.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/WILD WEST REDEMPTION RDR.png"
-dest_files=["res://.godot/imported/WILD WEST REDEMPTION RDR.png-8785d848bdb50b53124afe9d7430436f.ctex"]
+source_file="res://assets/Content/OPTIONS RDR.png"
+dest_files=["res://.godot/imported/OPTIONS RDR.png-bcd5c44eb7ed27819be8a91e4d27f166.ctex"]
 
 [params]
 

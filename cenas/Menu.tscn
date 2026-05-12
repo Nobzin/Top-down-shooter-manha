@@ -1,31 +1,31 @@
 [gd_scene format=3 uid="uid://crdo44gx42orq"]
 
-[ext_resource type="Texture2D" uid="uid://dn0pfmdl2cdel" path="res://assets/PLAY RDR.png" id="1_qoxbi"]
-[ext_resource type="Texture2D" uid="uid://cw5gkirpg3ik1" path="res://assets/OPTIONS RDR.png" id="2_alp18"]
-[ext_resource type="Texture2D" uid="uid://b5qcky7eq7a2l" path="res://assets/LEAVE RDR.png" id="3_hkswv"]
-[ext_resource type="Texture2D" uid="uid://dn8fflx20n4mx" path="res://assets/WILD WEST REDEMPTION RDR.png" id="4_okx32"]
+[ext_resource type="Texture2D" uid="uid://dn0pfmdl2cdel" path="res://assets/Content/PLAY RDR.png" id="1_qoxbi"]
+[ext_resource type="Texture2D" uid="uid://cw5gkirpg3ik1" path="res://assets/Content/OPTIONS RDR.png" id="2_alp18"]
+[ext_resource type="Texture2D" uid="uid://b5qcky7eq7a2l" path="res://assets/Content/LEAVE RDR.png" id="3_hkswv"]
+[ext_resource type="Texture2D" uid="uid://dn8fflx20n4mx" path="res://assets/Content/WILD WEST REDEMPTION RDR.png" id="4_okx32"]
 
-[node name="Menu" type="Node2D" unique_id=2075651774]
+[node name="Menu" type="Node2D" unique_id=1705850842]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=737876887]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2006631226]
 offset_left = -32.0
 offset_top = -5.0
 offset_right = 1176.0
 offset_bottom = 675.0
 color = Color(0, 0, 0, 1)
 
-[node name="PlayRdr" type="Sprite2D" parent="." unique_id=1358235285]
+[node name="PlayRdr" type="Sprite2D" parent="." unique_id=1024874853]
 position = Vector2(548, 271)
 texture = ExtResource("1_qoxbi")
 
-[node name="OptionsRdr" type="Sprite2D" parent="." unique_id=463632913]
+[node name="OptionsRdr" type="Sprite2D" parent="." unique_id=157348901]
 position = Vector2(540, 363)
 texture = ExtResource("2_alp18")
 
-[node name="LeaveRdr" type="Sprite2D" parent="." unique_id=650312892]
+[node name="LeaveRdr" type="Sprite2D" parent="." unique_id=1789133651]
 position = Vector2(549, 469)
 texture = ExtResource("3_hkswv")
 
-[node name="WildWestRedemptionRdr" type="Sprite2D" parent="." unique_id=1226112217]
+[node name="WildWestRedemptionRdr" type="Sprite2D" parent="." unique_id=415274141]
 position = Vector2(546, 133)
 texture = ExtResource("4_okx32")

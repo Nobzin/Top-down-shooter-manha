@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcgl58b42ejrb"
-path="res://.godot/imported/marston.jpg-54f0cdde0021ae6689138ac7381495ca.ctex"
+uid="uid://b5qcky7eq7a2l"
+path="res://.godot/imported/LEAVE RDR.png-8fc8317a9b96ce8014fddf4fdf75f601.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/marston.jpg"
-dest_files=["res://.godot/imported/marston.jpg-54f0cdde0021ae6689138ac7381495ca.ctex"]
+source_file="res://assets/Content/LEAVE RDR.png"
+dest_files=["res://.godot/imported/LEAVE RDR.png-8fc8317a9b96ce8014fddf4fdf75f601.ctex"]
 
 [params]
 

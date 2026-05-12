@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://6bdmkq8rtix7"]
+
+[ext_resource type="PackedScene" uid="uid://cyp57prbtsbsw" path="res://cenas/personagem.tscn" id="1_2jh14"]
+[ext_resource type="Texture2D" uid="uid://dxlg63t7nj16w" path="res://assets/Content/marston aura.png" id="2_lrjei"]
+[ext_resource type="Texture2D" uid="uid://dyehfd07fmpd2" path="res://assets/Content/morgan.png" id="3_5d3jg"]
+[ext_resource type="Texture2D" uid="uid://cw5gkirpg3ik1" path="res://assets/Content/OPTIONS RDR.png" id="4_wan0n"]
+
+[node name="mapa" type="Node2D" unique_id=42411864]
+
+[node name="personagem" parent="." unique_id=2134166019 instance=ExtResource("1_2jh14")]
+
+[node name="MarstonAura" type="Sprite2D" parent="." unique_id=873365759]
+position = Vector2(-750, 154)
+texture = ExtResource("2_lrjei")
+
+[node name="Morgan" type="Sprite2D" parent="." unique_id=889862575]
+position = Vector2(1530, 466)
+texture = ExtResource("3_5d3jg")
+
+[node name="OptionsRdr" type="Sprite2D" parent="." unique_id=473021647]
+position = Vector2(724, -708)
+texture = ExtResource("4_wan0n")

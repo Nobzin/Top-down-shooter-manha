@@ -1,39 +1,81 @@
 [gd_scene format=3 uid="uid://tpu7v8yx1xid"]
 
-[ext_resource type="Texture2D" uid="uid://dxlg63t7nj16w" path="res://assets/marston aura.png" id="1_rdr24"]
-[ext_resource type="Texture2D" uid="uid://dyehfd07fmpd2" path="res://assets/morgan.png" id="2_ewtd7"]
-[ext_resource type="Texture2D" uid="uid://bwxyl4r8lq64c" path="res://assets/Dutch_cleanup-removebg-preview.png" id="4_3bf4e"]
+[ext_resource type="Script" uid="uid://7qcvqdaubc8s" path="res://cenas/character_selection.gd" id="1_o2w23"]
+[ext_resource type="Texture2D" uid="uid://dxlg63t7nj16w" path="res://assets/Content/marston aura.png" id="1_rdr24"]
+[ext_resource type="Texture2D" uid="uid://dyehfd07fmpd2" path="res://assets/Content/morgan.png" id="2_ewtd7"]
+[ext_resource type="Texture2D" uid="uid://bwxyl4r8lq64c" path="res://assets/Content/Dutch_cleanup-removebg-preview.png" id="4_3bf4e"]
+[ext_resource type="Texture2D" uid="uid://bxqypuqawk37a" path="res://assets/Content/CHARACTER.png" id="4_7p85d"]
+[ext_resource type="Texture2D" uid="uid://dpa7nwuebasli" path="res://assets/Content/SETA.png" id="6_q8ob2"]
 
-[node name="CHARACTER_SELECTION" type="Node2D" unique_id=113596289]
+[node name="CHARACTER_SELECTION" type="Node2D" unique_id=1751102990]
+script = ExtResource("1_o2w23")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=455055965]
+[node name="BLAC_LINE" type="ColorRect" parent="." unique_id=1698793682]
 offset_left = -967.0
 offset_top = -545.0
 offset_right = 2193.0
 offset_bottom = 1203.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=620881208]
+[node name="RED_DEC" type="ColorRect" parent="." unique_id=108330728]
 offset_left = -794.0
 offset_top = -72.0
-offset_right = 1998.0
+offset_right = 1995.0
 offset_bottom = 838.0
-color = Color(0.22862363, 0, 0.0048616934, 1)
+color = Color(0.228624, 0, 0.00486169, 1)
 
-[node name="MarstonAura" type="Sprite2D" parent="." unique_id=1067763181]
-position = Vector2(-364, 430)
+[node name="MarstonAura" type="Sprite2D" parent="." unique_id=1716473329]
+position = Vector2(-411, 325)
 texture = ExtResource("1_rdr24")
+region_enabled = true
+region_rect = Rect2(0, 0, 458, 632.625)
 
-[node name="Morgan" type="Sprite2D" parent="." unique_id=170688467]
-position = Vector2(507, 343)
+[node name="Morgan" type="Sprite2D" parent="." unique_id=1625937798]
+position = Vector2(605, 316)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_ewtd7")
+region_enabled = true
+region_rect = Rect2(0, 0, 533, 610)
 
-[node name="DutchCleanupRemovebgPreview" type="Sprite2D" parent="." unique_id=2074552543]
-position = Vector2(1590, 323)
+[node name="DutchCleanupRemovebgPreview" type="Sprite2D" parent="." unique_id=719727223]
+position = Vector2(1581, 310)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("4_3bf4e")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=937942556]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1708735479]
 position = Vector2(599, 320)
 zoom = Vector2(0.4, 0.4)
+
+[node name="Character" type="Sprite2D" parent="." unique_id=743659129]
+position = Vector2(602, -308)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_7p85d")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1253100509]
+offset_left = 85.0
+offset_top = -119.0
+offset_right = 125.0
+offset_bottom = 884.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=926992526]
+offset_left = 1089.0
+offset_top = -113.0
+offset_right = 1129.0
+offset_bottom = 887.0
+color = Color(0, 0, 0, 1)
+
+[node name="Seta" type="Sprite2D" parent="." unique_id=1955792155]
+position = Vector2(-359, -152)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+texture = ExtResource("6_q8ob2")
+
+[node name="pos1" type="Node2D" parent="." unique_id=1031346306]
+position = Vector2(-363, -123)
+
+[node name="pos2" type="Node2D" parent="." unique_id=1819320238]
+position = Vector2(603, -126)
+
+[node name="pos3" type="Node2D" parent="." unique_id=761239314]
+position = Vector2(1592, -130)

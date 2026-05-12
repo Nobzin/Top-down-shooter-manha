@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc7pjgorscqg6"]
 
-[ext_resource type="Texture2D" uid="uid://3d3n2muj4r7v" path="res://assets/All_Fire_Bullet_Pixel_16x16.png" id="1_mk5qm"]
+[ext_resource type="Texture2D" uid="uid://3d3n2muj4r7v" path="res://assets/Content/All_Fire_Bullet_Pixel_16x16.png" id="1_mk5qm"]
+[ext_resource type="Script" uid="uid://crabx3n8moto4" path="res://cenas/bala.gd" id="1_selws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_selws"]
 size = Vector2(15, 6)
@@ -21,6 +22,22 @@ region = Rect2(288, 128, 16, 16)
 atlas = ExtResource("1_mk5qm")
 region = Rect2(304, 128, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_selws"]
+atlas = ExtResource("1_mk5qm")
+region = Rect2(256, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6smxw"]
+atlas = ExtResource("1_mk5qm")
+region = Rect2(272, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1eg4"]
+atlas = ExtResource("1_mk5qm")
+region = Rect2(288, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq3ty"]
+atlas = ExtResource("1_mk5qm")
+region = Rect2(304, 160, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6smxw"]
 animations = [{
 "frames": [{
@@ -35,19 +52,34 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eaxt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_selws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6smxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1eg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq3ty")
 }],
 "loop": true,
 "name": &"default",
-"speed": 12.0
+"speed": 20.0
 }]
 
-[node name="bala" type="Area2D" unique_id=1303354231]
+[node name="bala" type="Area2D" unique_id=341429742]
+script = ExtResource("1_selws")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1874133793]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=584033590]
 position = Vector2(0.5, 0)
+scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_selws")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=892213356]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1040793772]
 texture_filter = 1
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_6smxw")
-frame_progress = 0.51342696
+frame_progress = 0.35061553

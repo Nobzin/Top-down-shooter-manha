@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw5gkirpg3ik1"
-path="res://.godot/imported/OPTIONS RDR.png-726cdf8008a19c957c4d267f3442aed1.ctex"
+uid="uid://bxqypuqawk37a"
+path="res://.godot/imported/CHARACTER.png-b78998188b7be05573b60dbf6a7273ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/OPTIONS RDR.png"
-dest_files=["res://.godot/imported/OPTIONS RDR.png-726cdf8008a19c957c4d267f3442aed1.ctex"]
+source_file="res://assets/Content/CHARACTER.png"
+dest_files=["res://.godot/imported/CHARACTER.png-b78998188b7be05573b60dbf6a7273ef.ctex"]
 
 [params]
 

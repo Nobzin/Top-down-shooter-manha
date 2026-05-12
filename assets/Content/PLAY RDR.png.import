@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3d3n2muj4r7v"
-path="res://.godot/imported/All_Fire_Bullet_Pixel_16x16.png-ed274dd87aa0feaf0c9430bef6a3d0b9.ctex"
+uid="uid://dn0pfmdl2cdel"
+path="res://.godot/imported/PLAY RDR.png-279759b9bf0b514cb59e556ceca8481d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/All_Fire_Bullet_Pixel_16x16.png"
-dest_files=["res://.godot/imported/All_Fire_Bullet_Pixel_16x16.png-ed274dd87aa0feaf0c9430bef6a3d0b9.ctex"]
+source_file="res://assets/Content/PLAY RDR.png"
+dest_files=["res://.godot/imported/PLAY RDR.png-279759b9bf0b514cb59e556ceca8481d.ctex"]
 
 [params]
 

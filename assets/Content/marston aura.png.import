@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5tes0qry42wc"
-path="res://.godot/imported/WILD WEST REDEMPTION.png-d60855d2c62ceee436171ea48fefc100.ctex"
+uid="uid://dxlg63t7nj16w"
+path="res://.godot/imported/marston aura.png-d24b1ef8ab4d27e965cc6fb948b97498.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/WILD WEST REDEMPTION.png"
-dest_files=["res://.godot/imported/WILD WEST REDEMPTION.png-d60855d2c62ceee436171ea48fefc100.ctex"]
+source_file="res://assets/Content/marston aura.png"
+dest_files=["res://.godot/imported/marston aura.png-d24b1ef8ab4d27e965cc6fb948b97498.ctex"]
 
 [params]
 
