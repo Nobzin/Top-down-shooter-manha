@@ -82,4 +82,4 @@ shape = SubResource("RectangleShape2D_selws")
 texture_filter = 1
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_6smxw")
-frame_progress = 0.35061553
+frame_progress = 0.7851895

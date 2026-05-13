@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cc7pjgorscqg6" path="res://cenas/bala.tscn" id="2_c6r7t"]
 [ext_resource type="Texture2D" uid="uid://c07qhf4jyrc5a" path="res://assets/Content/Weapons.png" id="3_c6r7t"]
 [ext_resource type="Texture2D" uid="uid://b57wqg62gay6d" path="res://assets/Content/marston_hat-removebg-preview.png" id="4_d05dr"]
+[ext_resource type="AudioStream" uid="uid://c3ph703ja0xbp" path="res://Sound/freesound_community-doom-shotgun-2017-80549 (online-audio-converter.com).ogg" id="6_d05dr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s304p"]
 radius = 95.1315
@@ -51,7 +52,7 @@ position = Vector2(-3, 248)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_c6r7t")
 region_enabled = true
-region_rect = Rect2(1478, 445, 71, 365)
+region_rect = Rect2(1478, 445, 71, 268.39)
 
 [node name="hat" type="Sprite2D" parent="corpo" unique_id=1449887410]
 texture_filter = 1
@@ -68,6 +69,10 @@ zoom = Vector2(0.3, 0.3)
 position_smoothing_enabled = true
 
 [node name="ponta_da_arma" type="Marker2D" parent="." unique_id=1611745315]
-position = Vector2(396, 2)
+position = Vector2(355, 2)
 
 [node name="cooldown" type="Timer" parent="." unique_id=1916529779]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=154226537]
+stream = ExtResource("6_d05dr")
+volume_db = 12.0

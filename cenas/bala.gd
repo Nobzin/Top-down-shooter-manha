@@ -1,7 +1,7 @@
 extends Area2D
 
 var direction = Vector2.ZERO
-var velocity: float = 8000
+var velocity: float = 10000
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.play("default")

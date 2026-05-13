@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3ph703ja0xbp"
+path="res://.godot/imported/freesound_community-doom-shotgun-2017-80549 (online-audio-converter.com).ogg-91ad2ea2175bbf78b33977ae8baf721e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/freesound_community-doom-shotgun-2017-80549 (online-audio-converter.com).ogg"
+dest_files=["res://.godot/imported/freesound_community-doom-shotgun-2017-80549 (online-audio-converter.com).ogg-91ad2ea2175bbf78b33977ae8baf721e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

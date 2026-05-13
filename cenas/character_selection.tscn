@@ -6,6 +6,224 @@
 [ext_resource type="Texture2D" uid="uid://bwxyl4r8lq64c" path="res://assets/Content/Dutch_cleanup-removebg-preview.png" id="4_3bf4e"]
 [ext_resource type="Texture2D" uid="uid://bxqypuqawk37a" path="res://assets/Content/CHARACTER.png" id="4_7p85d"]
 [ext_resource type="Texture2D" uid="uid://dpa7nwuebasli" path="res://assets/Content/SETA.png" id="6_q8ob2"]
+[ext_resource type="Texture2D" uid="uid://br65lpunjy15w" path="res://assets/Content/image-removebg-preview.png" id="7_q8ob2"]
+[ext_resource type="Texture2D" uid="uid://chjn1f7gfsprb" path="res://assets/Content/image-removebg-preview (1).png" id="8_p1jkp"]
+[ext_resource type="Texture2D" uid="uid://cuqls0mes2w13" path="res://assets/Content/image-removebg-preview (2).png" id="9_h6033"]
+
+[sub_resource type="Animation" id="Animation_q8ob2"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarstonAura:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arma_marston:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.3088598]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lanchester:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-4.9275537]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("dutch_revolvers:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-5.321005]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("dutch_revolvers2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-7.223126]
+}
+
+[sub_resource type="Animation" id="Animation_e0fhy"]
+resource_name = "de__linde gun"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dutch_revolvers:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.3089969389957472, 7.504915783575617]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dutch_revolvers2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.3089969389957472, 6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_p1jkp"]
+resource_name = "marston_gun"
+length = 1.0333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arma_marston:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.3088598, 7.600908892435305]
+}
+
+[sub_resource type="Animation" id="Animation_h6033"]
+resource_name = "marston_selected"
+length = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarstonAura:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_l1lxg"]
+resource_name = "morgan_gun"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lanchester:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.3089969389957472, 7.600908892435305]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1lxg"]
+_data = {
+&"RESET": SubResource("Animation_q8ob2"),
+&"de__linde gun": SubResource("Animation_e0fhy"),
+&"marston_gun": SubResource("Animation_p1jkp"),
+&"marston_selected": SubResource("Animation_h6033"),
+&"morgan_gun": SubResource("Animation_l1lxg")
+}
+
+[sub_resource type="Animation" id="Animation_f3fi3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarstonAura:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Morgan:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_d2vpe"]
+resource_name = "marston_arma"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarstonAura:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_xmk0x"]
+resource_name = "morgan_selected"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Morgan:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e0fhy"]
+_data = {
+&"RESET": SubResource("Animation_f3fi3"),
+&"marston_arma": SubResource("Animation_d2vpe"),
+&"morgan_selected": SubResource("Animation_xmk0x")
+}
 
 [node name="CHARACTER_SELECTION" type="Node2D" unique_id=1751102990]
 script = ExtResource("1_o2w23")
@@ -25,20 +243,20 @@ offset_bottom = 838.0
 color = Color(0.228624, 0, 0.00486169, 1)
 
 [node name="MarstonAura" type="Sprite2D" parent="." unique_id=1716473329]
-position = Vector2(-411, 325)
+position = Vector2(-267, 404)
 texture = ExtResource("1_rdr24")
 region_enabled = true
 region_rect = Rect2(0, 0, 458, 632.625)
 
 [node name="Morgan" type="Sprite2D" parent="." unique_id=1625937798]
-position = Vector2(605, 316)
+position = Vector2(834, 392)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_ewtd7")
 region_enabled = true
 region_rect = Rect2(0, 0, 533, 610)
 
-[node name="DutchCleanupRemovebgPreview" type="Sprite2D" parent="." unique_id=719727223]
-position = Vector2(1581, 310)
+[node name="Dutch" type="Sprite2D" parent="." unique_id=719727223]
+position = Vector2(1748.0001, 413)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("4_3bf4e")
 
@@ -79,3 +297,34 @@ position = Vector2(603, -126)
 
 [node name="pos3" type="Node2D" parent="." unique_id=761239314]
 position = Vector2(1592, -130)
+
+[node name="arma_marston" type="Sprite2D" parent="." unique_id=103697709]
+position = Vector2(-609.00006, 282)
+rotation = 1.3088598
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_q8ob2")
+
+[node name="animacoes_arma" type="AnimationPlayer" parent="." unique_id=781529966]
+libraries/ = SubResource("AnimationLibrary_l1lxg")
+
+[node name="animacoes_personagens" type="AnimationPlayer" parent="." unique_id=2080983882]
+libraries/ = SubResource("AnimationLibrary_e0fhy")
+
+[node name="Lanchester" type="Sprite2D" parent="." unique_id=33288465]
+position = Vector2(401, 359)
+rotation = -4.9275537
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_p1jkp")
+
+[node name="dutch_revolvers" type="Sprite2D" parent="." unique_id=1325116506]
+position = Vector2(1228.0001, 282.99997)
+rotation = -5.321005
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_h6033")
+flip_h = true
+
+[node name="dutch_revolvers2" type="Sprite2D" parent="." unique_id=195290785]
+position = Vector2(1468, 284)
+rotation = -7.223126
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_h6033")

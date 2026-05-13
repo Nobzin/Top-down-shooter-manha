@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b07t56la2ums3"
+path="res://.godot/imported/freesound_community-shotgun-sounds-6464 (online-audio-converter.com).ogg-18eadb6b004fcb3698efb5fe47e5c846.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/freesound_community-shotgun-sounds-6464 (online-audio-converter.com).ogg"
+dest_files=["res://.godot/imported/freesound_community-shotgun-sounds-6464 (online-audio-converter.com).ogg-18eadb6b004fcb3698efb5fe47e5c846.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
