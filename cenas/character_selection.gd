@@ -34,4 +34,6 @@ func update_selection():
 	elif number == 2:
 		$Seta.global_position = pos3.global_position
 		character = "van_der_linde"
+		$animacoes_arma.play("de__linde gun")
+		$animacoes_personagens.play("dutch_selected")
 	print(number)

@@ -15,8 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Top_down_master"
+run/main_scene="uid://cyp57prbtsbsw"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Player=""
 
 [input]
 

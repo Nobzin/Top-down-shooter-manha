@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://d21xpicjn3o1n"]
+
+[ext_resource type="Script" uid="uid://c6gink5ijugky" path="res://inimigo.gd" id="1_0b8xr"]
+[ext_resource type="Texture2D" uid="uid://dh67tfv3jdeo8" path="res://assets/10 Sem Título_20260512105113.png" id="1_030df"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g45jm"]
+size = Vector2(405, 238)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_030df"]
+radius = 149.0
+height = 350.0
+
+[sub_resource type="Animation" id="Animation_enrbn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/braco_d:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(120, -120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprites/braco_d:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprites/braco_e:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-120, -120)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprites/braco_e:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sprites/cabeca:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l0fh3"]
+resource_name = "ataque"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites/braco_d:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.19999999, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(120, -120), Vector2(245, -88), Vector2(100, -185)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprites/braco_d:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.19999999, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.9197885158010115, -0.19722220547535943]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprites/braco_e:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.19999999, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-120, -120), Vector2(-245, -88), Vector2(-100, -185)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprites/braco_e:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.19999999, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.9197885158010115, 0.19722220547535943]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sprites/cabeca:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.033333346, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o83ti"]
+_data = {
+&"RESET": SubResource("Animation_enrbn"),
+&"ataque": SubResource("Animation_l0fh3")
+}
+
+[node name="Inimigo" type="CharacterBody2D" unique_id=387471517]
+script = ExtResource("1_0b8xr")
+
+[node name="ataque_area" type="Area2D" parent="." unique_id=548136156]
+position = Vector2(-22.00003, -6)
+rotation = 1.5758015
+
+[node name="colisao_ataque" type="CollisionShape2D" parent="ataque_area" unique_id=568255097]
+position = Vector2(-1.5, -252)
+shape = SubResource("RectangleShape2D_g45jm")
+debug_color = Color(0.89591783, 0, 0.11545884, 0.41960785)
+
+[node name="sprites" type="Node2D" parent="." unique_id=655812175]
+rotation = 1.5707964
+
+[node name="braco_e" type="Sprite2D" parent="sprites" unique_id=1857787557]
+position = Vector2(-120, -120)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_030df")
+region_enabled = true
+region_rect = Rect2(504, 275, 206, 666)
+
+[node name="braco_d" type="Sprite2D" parent="sprites" unique_id=1021947772]
+position = Vector2(120, -120)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_030df")
+region_enabled = true
+region_rect = Rect2(1290, 275, 206, 666)
+
+[node name="cabeca" type="Sprite2D" parent="sprites" unique_id=601756894]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_030df")
+region_enabled = true
+region_rect = Rect2(819, 873, 434, 426)
+
+[node name="colisao_inimigo" type="CollisionShape2D" parent="." unique_id=1338111579]
+position = Vector2(38, -9.999997)
+rotation = 1.3989198
+shape = SubResource("CapsuleShape2D_030df")
+
+[node name="inimigo_ataques_anim" type="AnimationPlayer" parent="." unique_id=1045354958]
+libraries/ = SubResource("AnimationLibrary_o83ti")
+
+[connection signal="body_entered" from="ataque_area" to="." method="_on_ataque_area_body_entered"]
+[connection signal="body_exited" from="ataque_area" to="." method="_on_ataque_area_body_exited"]

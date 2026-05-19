@@ -10,3 +10,4 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	rotation = direction.angle()
 	position += velocity * direction * delta
+	

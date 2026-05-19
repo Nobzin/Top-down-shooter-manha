@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dxlg63t7nj16w" path="res://assets/Content/marston aura.png" id="2_lrjei"]
 [ext_resource type="Texture2D" uid="uid://dyehfd07fmpd2" path="res://assets/Content/morgan.png" id="3_5d3jg"]
 [ext_resource type="Texture2D" uid="uid://cw5gkirpg3ik1" path="res://assets/Content/OPTIONS RDR.png" id="4_wan0n"]
+[ext_resource type="PackedScene" uid="uid://d21xpicjn3o1n" path="res://inimigo.tscn" id="5_5d3jg"]
 
 [node name="mapa" type="Node2D" unique_id=42411864]
 
-[node name="personagem" parent="." unique_id=2134166019 instance=ExtResource("1_2jh14")]
+[node name="personagem" parent="." unique_id=2134166019 groups=["Player"] instance=ExtResource("1_2jh14")]
 
 [node name="MarstonAura" type="Sprite2D" parent="." unique_id=873365759]
 position = Vector2(-750, 154)
@@ -20,3 +21,7 @@ texture = ExtResource("3_5d3jg")
 [node name="OptionsRdr" type="Sprite2D" parent="." unique_id=473021647]
 position = Vector2(724, -708)
 texture = ExtResource("4_wan0n")
+
+[node name="Inimigo" parent="." unique_id=387471517 node_paths=PackedStringArray("jogador") instance=ExtResource("5_5d3jg")]
+position = Vector2(-2646, -61)
+jogador = NodePath("../personagem")

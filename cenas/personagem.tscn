@@ -10,6 +10,75 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_s304p"]
 radius = 95.1315
 
+[sub_resource type="Animation" id="Animation_d05dr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("corpo/braco_esquerdo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45.99969, 86.000175)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("corpo/braco_esquerdo:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0816036]
+}
+
+[sub_resource type="Animation" id="Animation_foddy"]
+resource_name = "Recharge"
+length = 0.23333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("corpo/braco_esquerdo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.23333333),
+"transitions": PackedFloat32Array(1, 1.4142138, 1),
+"update": 0,
+"values": [Vector2(45.99969, 86.000175), Vector2(44, 59), Vector2(46, 86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("corpo/braco_esquerdo:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.07330382858376164, -0.14311699866353483]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3o8vf"]
+_data = {
+&"RESET": SubResource("Animation_d05dr"),
+&"Recharge": SubResource("Animation_foddy")
+}
+
+[sub_resource type="Animation" id="Animation_3o8vf"]
+resource_name = "andando"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rbten"]
+_data = {
+&"andando": SubResource("Animation_3o8vf")
+}
+
 [node name="personagem" type="CharacterBody2D" unique_id=2134166019]
 script = ExtResource("1_tyg5f")
 bala_cena = ExtResource("2_c6r7t")
@@ -27,7 +96,7 @@ region_rect = Rect2(1421, 860, 103, 199)
 
 [node name="braco_esquerdo" type="Sprite2D" parent="corpo" unique_id=1224580643]
 texture_filter = 1
-position = Vector2(50, 86)
+position = Vector2(45.99969, 86.000175)
 rotation = -0.0816036
 texture = ExtResource("1_roqey")
 region_enabled = true
@@ -48,7 +117,7 @@ region_rect = Rect2(1187, 834, 165, 165)
 
 [node name="gun" type="Sprite2D" parent="corpo" unique_id=1920870663]
 texture_filter = 1
-position = Vector2(-3, 248)
+position = Vector2(-3.000829, 228.99998)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_c6r7t")
 region_enabled = true
@@ -69,10 +138,16 @@ zoom = Vector2(0.3, 0.3)
 position_smoothing_enabled = true
 
 [node name="ponta_da_arma" type="Marker2D" parent="." unique_id=1611745315]
-position = Vector2(355, 2)
+position = Vector2(335, 2)
 
 [node name="cooldown" type="Timer" parent="." unique_id=1916529779]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=154226537]
 stream = ExtResource("6_d05dr")
-volume_db = 12.0
+volume_db = 5.067
+
+[node name="Animacoes_arma" type="AnimationPlayer" parent="." unique_id=981149374]
+libraries/ = SubResource("AnimationLibrary_3o8vf")
+
+[node name="animacoes_andar" type="AnimationPlayer" parent="." unique_id=364453539]
+libraries/ = SubResource("AnimationLibrary_rbten")

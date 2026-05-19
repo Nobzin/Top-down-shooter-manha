@@ -6,6 +6,8 @@ var direcao = Vector2.ZERO
 @onready var ponta_arma = $ponta_da_arma
 @export var bala_cena: PackedScene
 @onready var cooldown = $cooldown
+@onready var sound_effects = $AudioStreamPlayer2D
+@onready var arma_animation = $Animacoes_arma
 var cooldowns = false
 func _physics_process(delta: float) -> void:
 	mover()
@@ -30,19 +32,21 @@ func _input(event: InputEvent) -> void:
 
 func disparar():
 	cooldowns = true
-	cooldown.start(1)
-	if cooldowns == true:
-		
-		var nova_bala = bala_cena.instantiate()
-		nova_bala.global_position = ponta_arma.global_position
-		nova_bala.direction = (ponta_arma.global_position - global_position).normalized()
-		get_tree().current_scene.add_child(nova_bala)
-		$AudioStreamPlayer2D.play()
+	cooldown.start(0.01)
 	
-
 		
-	
+	var nova_bala = bala_cena.instantiate()
+	nova_bala.global_position = ponta_arma.global_position
+	nova_bala.direction = (ponta_arma.global_position - global_position).normalized()
+	get_tree().current_scene.add_child(nova_bala)
+	sound_effects.play()
+	await get_tree().create_timer(0.63).timeout
+	sound_effects.stop()
 	await cooldown.timeout
+	sound_effects.play(0.52)
+	arma_animation.play("Recharge")
+	await arma_animation.animation_finished
 	cooldowns = false
+	
 	
 	

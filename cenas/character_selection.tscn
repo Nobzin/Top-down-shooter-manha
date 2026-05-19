@@ -75,6 +75,8 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_e0fhy"]
 resource_name = "de__linde gun"
+length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -82,7 +84,7 @@ tracks/0/path = NodePath("dutch_revolvers:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.3089969389957472, 7.504915783575617]
@@ -94,10 +96,10 @@ tracks/1/path = NodePath("dutch_revolvers2:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0009999999, 1),
+"times": PackedFloat32Array(0.0009999999, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.3089969389957472, 6.283185307179586]
+"values": [-7.504915783575617, -13.788101090755204]
 }
 
 [sub_resource type="Animation" id="Animation_p1jkp"]
@@ -185,6 +187,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1.1, 1.1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dutch:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_s5b6y"]
+resource_name = "dutch_selected"
+length = 0.13333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dutch:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(1.3, 1.3)]
+}
 
 [sub_resource type="Animation" id="Animation_d2vpe"]
 resource_name = "marston_arma"
@@ -221,6 +251,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e0fhy"]
 _data = {
 &"RESET": SubResource("Animation_f3fi3"),
+&"dutch_selected": SubResource("Animation_s5b6y"),
 &"marston_arma": SubResource("Animation_d2vpe"),
 &"morgan_selected": SubResource("Animation_xmk0x")
 }
@@ -256,7 +287,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 533, 610)
 
 [node name="Dutch" type="Sprite2D" parent="." unique_id=719727223]
-position = Vector2(1748.0001, 413)
+position = Vector2(1745, 400)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("4_3bf4e")
 
