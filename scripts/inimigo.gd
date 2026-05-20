@@ -1,0 +1,75 @@
+extends CharacterBody2D
+
+@export var jogador = CharacterBody2D
+@onready var animacoes_inimigo = $inimigo_ataques_anim
+@onready var ataque_collision = $ataque_area/colisao_ataque
+@onready var enemy_sound = $zombiedeath
+@onready var death_anim = $death_anim
+@onready var damage_anim = preload("res://blood_anim.tscn")
+var direction:= Vector2.ZERO
+var dano = 10
+var dano_tomado = 0
+var vida = 1
+var SPEED = 900
+var in_area = false
+var atacando = false
+var morto = false
+func _physics_process(delta: float) -> void:
+	
+	if not morto:
+		mover()
+	move_and_slide()
+
+func mover():
+	if jogador:
+		direction = (jogador.global_position - global_position).normalized()
+		velocity = direction * SPEED
+		rotation = direction.angle()
+		
+func atacar():
+	if atacando:
+		return
+	
+	atacando = true
+	
+
+	animacoes_inimigo.play("ataque")
+	await get_tree().create_timer(0.6).timeout
+	if jogador:
+		jogador.tomar_dano()
+	else:
+		in_area = false
+	
+	atacando = false
+	if in_area:
+		await get_tree().create_timer(0.4).timeout
+		atacar()
+func _on_ataque_area_body_entered(body: CharacterBody2D) -> void:
+	if body.is_in_group("Player"):
+		in_area = true
+		atacar()
+		
+		
+
+func _on_ataque_area_body_exited(body: CharacterBody2D) -> void:
+	if body.is_in_group("Player"):
+		in_area = false
+		ataque_collision.disabled = true
+func inimigo_tomar_dano(position):
+	dano_tomado = jogador.dano
+	vida -= dano_tomado
+	var sangue = damage_anim.instantiate()
+	get_parent().add_child(sangue)
+	sangue.global_position = position
+	sangue.play(str(randi_range(1,5)))
+	await sangue.animation_finished
+	sangue.queue_free()
+	print(vida)
+	if vida <=0:
+		morto = true
+		velocity = Vector2.ZERO
+		enemy_sound.play()
+		death_anim.play("death1")
+		await death_anim.animation_finished
+		self.queue_free()
+		

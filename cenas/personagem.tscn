@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://casy73cqmatdh" path="res://scripts/personagem.gd" id="1_tyg5f"]
 [ext_resource type="PackedScene" uid="uid://cc7pjgorscqg6" path="res://cenas/bala.tscn" id="2_c6r7t"]
 [ext_resource type="Texture2D" uid="uid://c07qhf4jyrc5a" path="res://assets/Content/Weapons.png" id="3_c6r7t"]
+[ext_resource type="PackedScene" uid="uid://cefwb3dlnk1vc" path="res://cenas/shoot_particles.tscn" id="3_foddy"]
 [ext_resource type="Texture2D" uid="uid://b57wqg62gay6d" path="res://assets/Content/marston_hat-removebg-preview.png" id="4_d05dr"]
 [ext_resource type="AudioStream" uid="uid://c3ph703ja0xbp" path="res://Sound/freesound_community-doom-shotgun-2017-80549 (online-audio-converter.com).ogg" id="6_d05dr"]
 
@@ -79,9 +80,10 @@ _data = {
 &"andando": SubResource("Animation_3o8vf")
 }
 
-[node name="personagem" type="CharacterBody2D" unique_id=2134166019]
+[node name="personagem" type="CharacterBody2D" unique_id=2134166019 groups=["Player"]]
 script = ExtResource("1_tyg5f")
 bala_cena = ExtResource("2_c6r7t")
+shoot_particles = ExtResource("3_foddy")
 
 [node name="corpo" type="Node2D" parent="." unique_id=1088976604]
 rotation = -1.5708

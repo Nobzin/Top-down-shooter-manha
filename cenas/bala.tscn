@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cc7pjgorscqg6"]
 
 [ext_resource type="Texture2D" uid="uid://3d3n2muj4r7v" path="res://assets/Content/All_Fire_Bullet_Pixel_16x16.png" id="1_mk5qm"]
-[ext_resource type="Script" uid="uid://crabx3n8moto4" path="res://cenas/bala.gd" id="1_selws"]
+[ext_resource type="Script" uid="uid://crabx3n8moto4" path="res://scripts/bala.gd" id="1_selws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_selws"]
 size = Vector2(15, 6)
@@ -83,3 +83,5 @@ texture_filter = 1
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_6smxw")
 frame_progress = 0.7851895
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

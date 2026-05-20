@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tpu7v8yx1xid"]
 
-[ext_resource type="Script" uid="uid://7qcvqdaubc8s" path="res://cenas/character_selection.gd" id="1_o2w23"]
+[ext_resource type="Script" uid="uid://7qcvqdaubc8s" path="res://scripts/character_selection.gd" id="1_o2w23"]
 [ext_resource type="Texture2D" uid="uid://dxlg63t7nj16w" path="res://assets/Content/marston aura.png" id="1_rdr24"]
 [ext_resource type="Texture2D" uid="uid://dyehfd07fmpd2" path="res://assets/Content/morgan.png" id="2_ewtd7"]
 [ext_resource type="Texture2D" uid="uid://bwxyl4r8lq64c" path="res://assets/Content/Dutch_cleanup-removebg-preview.png" id="4_3bf4e"]

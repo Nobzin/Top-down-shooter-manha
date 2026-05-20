@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cefwb3dlnk1vc"]
+
+[ext_resource type="Script" uid="uid://cd7fyck6nd07j" path="res://scripts/shoot_particles.gd" id="1_q6vvu"]
+[ext_resource type="Texture2D" uid="uid://bonpuqhbllvi0" path="res://assets/Free/427.png" id="2_kwkld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0i6s"]
+atlas = ExtResource("2_kwkld")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vqsi"]
+atlas = ExtResource("2_kwkld")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sno7r"]
+atlas = ExtResource("2_kwkld")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nx3c"]
+atlas = ExtResource("2_kwkld")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr1b6"]
+atlas = ExtResource("2_kwkld")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byqg3"]
+atlas = ExtResource("2_kwkld")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2kpc"]
+atlas = ExtResource("2_kwkld")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vos28"]
+atlas = ExtResource("2_kwkld")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oaly8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0i6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vqsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sno7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nx3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr1b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byqg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2kpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vos28")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="shoot_particles" type="Node2D" unique_id=1249347648]
+script = ExtResource("1_q6vvu")
+
+[node name="Particles" type="AnimatedSprite2D" parent="." unique_id=487415995]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_oaly8")
+frame = 7
+frame_progress = 1.0
