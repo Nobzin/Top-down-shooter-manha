@@ -6,6 +6,8 @@ var character = null
 @onready var pos3 = $pos3
 func _ready() -> void:
 	update_selection()
+	
+		
 func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("direita"):
@@ -14,7 +16,12 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("esquerda"):
 		number -= 1
 		update_selection()
+	elif Input.is_action_just_pressed("select"):
+		get_tree().change_scene_to_file("res://cenas/mapa.tscn")
+
 func update_selection():
+
+		
 	if number >2 :
 		number = 0
 	elif number <0:
@@ -37,3 +44,7 @@ func update_selection():
 		$animacoes_arma.play("de__linde gun")
 		$animacoes_personagens.play("dutch_selected")
 	print(number)
+
+
+
+		

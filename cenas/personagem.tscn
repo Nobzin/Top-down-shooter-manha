@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cc7pjgorscqg6" path="res://cenas/bala.tscn" id="2_c6r7t"]
 [ext_resource type="Texture2D" uid="uid://c07qhf4jyrc5a" path="res://assets/Content/Weapons.png" id="3_c6r7t"]
 [ext_resource type="PackedScene" uid="uid://cefwb3dlnk1vc" path="res://cenas/shoot_particles.tscn" id="3_foddy"]
-[ext_resource type="Texture2D" uid="uid://b57wqg62gay6d" path="res://assets/Content/marston_hat-removebg-preview.png" id="4_d05dr"]
 [ext_resource type="AudioStream" uid="uid://c3ph703ja0xbp" path="res://Sound/freesound_community-doom-shotgun-2017-80549 (online-audio-converter.com).ogg" id="6_d05dr"]
+[ext_resource type="Texture2D" uid="uid://b4cgist11b0as" path="res://new_compressed_texture_2d.tres" id="6_foddy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s304p"]
 radius = 95.1315
@@ -80,6 +80,43 @@ _data = {
 &"andando": SubResource("Animation_3o8vf")
 }
 
+[sub_resource type="Animation" id="Animation_rbten"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dead_eyeeffect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p2ucq"]
+resource_name = "dead_eye"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dead_eyeeffect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g4ww8"]
+_data = {
+&"RESET": SubResource("Animation_rbten"),
+&"dead_eye": SubResource("Animation_p2ucq")
+}
+
 [node name="personagem" type="CharacterBody2D" unique_id=2134166019 groups=["Player"]]
 script = ExtResource("1_tyg5f")
 bala_cena = ExtResource("2_c6r7t")
@@ -129,7 +166,7 @@ region_rect = Rect2(1478, 445, 71, 268.39)
 texture_filter = 1
 position = Vector2(4, -19)
 scale = Vector2(0.46, 0.46)
-texture = ExtResource("4_d05dr")
+texture = ExtResource("6_foddy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1692859662]
 shape = SubResource("CircleShape2D_s304p")
@@ -153,3 +190,18 @@ libraries/ = SubResource("AnimationLibrary_3o8vf")
 
 [node name="animacoes_andar" type="AnimationPlayer" parent="." unique_id=364453539]
 libraries/ = SubResource("AnimationLibrary_rbten")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1831707471]
+
+[node name="dead_eyeeffect" type="ColorRect" parent="CanvasLayer" unique_id=1151845956]
+visible = false
+offset_left = -1674.0
+offset_top = -1083.0
+offset_right = 2260.0
+offset_bottom = 1163.0
+color = Color(1, 0.2833333, 0, 0.36862746)
+
+[node name="dead_eye_anim" type="AnimationPlayer" parent="CanvasLayer" unique_id=838597455]
+libraries/ = SubResource("AnimationLibrary_g4ww8")
+
+[node name="dead_eye_cooldown" type="Timer" parent="." unique_id=1905643495]

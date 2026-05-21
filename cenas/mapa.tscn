@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://6bdmkq8rtix7"]
 
 [ext_resource type="PackedScene" uid="uid://cyp57prbtsbsw" path="res://cenas/personagem.tscn" id="1_okwug"]
+[ext_resource type="Script" uid="uid://dxmo5tspjm2bo" path="res://cenas/mapa.gd" id="1_y6ojl"]
 [ext_resource type="Texture2D" uid="uid://dxlg63t7nj16w" path="res://assets/Content/marston aura.png" id="2_y6ojl"]
 [ext_resource type="Texture2D" uid="uid://dyehfd07fmpd2" path="res://assets/Content/morgan.png" id="3_fw2ke"]
 [ext_resource type="Texture2D" uid="uid://cw5gkirpg3ik1" path="res://assets/Content/OPTIONS RDR.png" id="4_s13sd"]
-[ext_resource type="PackedScene" uid="uid://d21xpicjn3o1n" path="res://cenas/inimigo.tscn" id="5_qdfy1"]
 
 [node name="mapa" type="Node2D" unique_id=42411864]
+script = ExtResource("1_y6ojl")
 
-[node name="personagem" parent="." unique_id=2134166019 node_paths=PackedStringArray("inimigo") instance=ExtResource("1_okwug")]
-inimigo = NodePath("../Inimigo")
+[node name="personagem" parent="." unique_id=2134166019 instance=ExtResource("1_okwug")]
 
 [node name="MarstonAura" type="Sprite2D" parent="." unique_id=873365759]
 position = Vector2(-750, 154)
@@ -23,6 +23,24 @@ texture = ExtResource("3_fw2ke")
 position = Vector2(724, -708)
 texture = ExtResource("4_s13sd")
 
-[node name="Inimigo" parent="." unique_id=387471517 node_paths=PackedStringArray("jogador") instance=ExtResource("5_qdfy1")]
-position = Vector2(-2646, -61)
-jogador = NodePath("../personagem")
+[node name="Timer" type="Timer" parent="." unique_id=1300177583]
+autostart = true
+
+[node name="Pontos_spawn" type="Node2D" parent="." unique_id=1055465260]
+
+[node name="spawn_1" type="Marker2D" parent="Pontos_spawn" unique_id=1809548550]
+position = Vector2(89, -1783)
+
+[node name="spawn_2" type="Marker2D" parent="Pontos_spawn" unique_id=1122411585]
+position = Vector2(1556, 768)
+
+[node name="spawn_3" type="Marker2D" parent="Pontos_spawn" unique_id=477340932]
+position = Vector2(2246, -1123)
+
+[node name="spawn_4" type="Marker2D" parent="Pontos_spawn" unique_id=1337577388]
+position = Vector2(-2196, 1251)
+
+[node name="spawn_5" type="Marker2D" parent="Pontos_spawn" unique_id=895562834]
+position = Vector2(-1950, -1231)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
