@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bbgw326esv0e"]
+
+[ext_resource type="Script" uid="uid://oxgv54hge4xt" path="res://canvas_layer.gd" id="1_tg4cr"]
+[ext_resource type="Script" uid="uid://bochoq80cdlny" path="res://kills_txt.gd" id="1_v2lfg"]
+
+[node name="ROUND_HUD" type="CanvasLayer" unique_id=798620586]
+script = ExtResource("1_tg4cr")
+
+[node name="round_panel" type="Panel" parent="." unique_id=1478543666]
+offset_right = 200.0
+offset_bottom = 50.0
+
+[node name="round_txt" type="Label" parent="round_panel" unique_id=969393287]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 12.0
+offset_right = 88.0
+offset_bottom = 35.0
+
+[node name="kills_panel" type="Panel" parent="." unique_id=1710041494]
+offset_left = 2.0
+offset_top = 54.0
+offset_right = 202.0
+offset_bottom = 104.0
+
+[node name="kills_txt" type="Label" parent="kills_panel" unique_id=27373457]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 62.0
+offset_bottom = 33.0
+script = ExtResource("1_v2lfg")
+
+[node name="Round_limit_txt" type="Panel" parent="." unique_id=242550799]
+offset_left = 1008.0
+offset_top = 1.0
+offset_right = 1128.0
+offset_bottom = 41.0
+
+[node name="round_limit_txt" type="Label" parent="Round_limit_txt" unique_id=1684610182]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 43.0
+offset_bottom = 30.0

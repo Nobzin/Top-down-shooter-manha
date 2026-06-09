@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dxlg63t7nj16w" path="res://assets/Content/marston aura.png" id="2_y6ojl"]
 [ext_resource type="Texture2D" uid="uid://dyehfd07fmpd2" path="res://assets/Content/morgan.png" id="3_fw2ke"]
 [ext_resource type="Texture2D" uid="uid://cw5gkirpg3ik1" path="res://assets/Content/OPTIONS RDR.png" id="4_s13sd"]
+[ext_resource type="PackedScene" uid="uid://b1wcmn53omeob" path="res://player_gui.tscn" id="6_fw2ke"]
+[ext_resource type="PackedScene" uid="uid://bbgw326esv0e" path="res://canvas_layer.tscn" id="6_y6ojl"]
 
 [node name="mapa" type="Node2D" unique_id=42411864]
 script = ExtResource("1_y6ojl")
@@ -42,5 +44,11 @@ position = Vector2(-2196, 1251)
 
 [node name="spawn_5" type="Marker2D" parent="Pontos_spawn" unique_id=895562834]
 position = Vector2(-1950, -1231)
+
+[node name="ROUND_HUD" parent="." unique_id=798620586 instance=ExtResource("6_y6ojl")]
+
+[node name="Player_gui" parent="." unique_id=1388732318 instance=ExtResource("6_fw2ke")]
+offset = Vector2(130, 700)
+transform = Transform2D(1, 0, 0, 1, 130, 700)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

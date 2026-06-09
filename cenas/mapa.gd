@@ -1,7 +1,10 @@
 extends Node2D
 @onready var pontos_spawn = $Pontos_spawn
+@onready var status = preload("res://player_gui.tscn")
 var cena_inimigo:= preload("res://cenas/inimigo.tscn")
-@onready var jogador = $personagem
+@onready var jogador = get_node("personagem")
+	
+
 func spawn_simples():
 	var spawn_escolhido = pontos_spawn.get_children().pick_random()
 	var novo_inimigo = cena_inimigo.instantiate()
@@ -10,3 +13,16 @@ func spawn_simples():
 	get_tree().current_scene.add_child(novo_inimigo)
 func _on_timer_timeout() -> void:
 	spawn_simples()
+func round_over():
+	if Global.kills >= Global.round_limit:
+		Global.round_end = true
+	if Global.round_end: 
+		Global.Round +=1
+		Global.round_limit *= randi_range(2,5)
+		Global.round_end = false
+	print(Global.round_limit)
+	print(Global.kills)
+		
+func _process(delta: float) -> void:
+	round_over()	
+	

@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var enemy_sound = $zombiedeath
 @onready var death_anim = $death_anim
 @onready var damage_anim = preload("res://cenas/blood_anim.tscn")
+@onready var barra_vida = $ProgressBar
 var direction:= Vector2.ZERO
 var dano = 10
 var dano_tomado = 0
@@ -14,8 +15,10 @@ var SPEED = 900
 var in_area = false
 var atacando = false
 var morto = false
+func _ready() -> void:
+	barra_vida.max_value = vida
 func _physics_process(delta: float) -> void:
-	
+	barra_vida.value = vida
 	if not morto:
 		mover()
 	move_and_slide()
@@ -61,6 +64,7 @@ func inimigo_tomar_dano(position , dano):
 	vida -= dano_tomado
 	var sangue = damage_anim.instantiate()
 	get_parent().add_child(sangue)
+	sangue.damage_Anim.text = str(dano_tomado)
 	sangue.global_position = position
 	sangue.play(str(randi_range(1,5)))
 	print(vida)
@@ -70,5 +74,6 @@ func inimigo_tomar_dano(position , dano):
 		enemy_sound.play()
 		death_anim.play("death1")
 		await death_anim.animation_finished
+		Global.kills +=1
 		self.queue_free()
 		

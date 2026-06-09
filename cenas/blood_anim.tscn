@@ -735,8 +735,81 @@ animations = [{
 "speed": 50.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_3jr6v"]
+font_color = Color(1, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_2xbws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qwfgk"]
+resource_name = "damage_in"
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [32, 64]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xknlm"]
+_data = {
+&"RESET": SubResource("Animation_2xbws"),
+&"damage_in": SubResource("Animation_qwfgk")
+}
+
 [node name="Blood_anim" type="AnimatedSprite2D" unique_id=1134345275]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_jyjqs")
 animation = &"5"
 script = ExtResource("6_rjw16")
+
+[node name="Label" type="Label" parent="." unique_id=1066459925]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_3jr6v")
+
+[node name="damage_anim" type="AnimationPlayer" parent="." unique_id=899049017]
+libraries/ = SubResource("AnimationLibrary_xknlm")

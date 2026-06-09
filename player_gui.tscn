@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b1wcmn53omeob"]
+
+[ext_resource type="Texture2D" uid="uid://d31gjgvjxw2y2" path="res://assets/image-removebg-preview (4).png" id="1_ogtmc"]
+
+[node name="Player_gui" type="CanvasLayer" unique_id=1388732318]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=31239705]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_ogtmc")

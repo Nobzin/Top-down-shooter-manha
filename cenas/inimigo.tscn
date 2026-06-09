@@ -350,6 +350,9 @@ _data = {
 &"death1": SubResource("Animation_5cs1f")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5rp5"]
+bg_color = Color(0.73, 0, 0, 1)
+
 [node name="Inimigo" type="CharacterBody2D" unique_id=387471517 groups=["Inimigos"]]
 script = ExtResource("1_0b8xr")
 
@@ -406,6 +409,17 @@ libraries/ = SubResource("AnimationLibrary_ekwcj")
 
 [node name="zombiedeath" type="AudioStreamPlayer2D" parent="." unique_id=104561443]
 stream = ExtResource("9_hjbd6")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=461176105]
+offset_left = -229.0
+offset_top = 565.0
+offset_right = 971.0
+offset_bottom = 615.0
+rotation = -1.5707964
+theme_override_styles/fill = SubResource("StyleBoxFlat_n5rp5")
+max_value = 0.0
+step = 1.0
+show_percentage = false
 
 [connection signal="body_entered" from="ataque_area" to="." method="_on_ataque_area_body_entered"]
 [connection signal="body_exited" from="ataque_area" to="." method="_on_ataque_area_body_exited"]

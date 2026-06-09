@@ -5,6 +5,8 @@ const JUMP_VELOCITY = -400.0
 var vida = 100
 var dano_tomado = 0
 var dano = 30
+@onready var status_player = $status
+@onready var status_pos = $Marker2D
 var direcao = Vector2.ZERO
 var dead_eye_timer = 0.0
 @onready var deadeye_effect = $CanvasLayer/dead_eyeeffect
@@ -16,6 +18,7 @@ var dead_eye_timer = 0.0
 @onready var arma_animation = $Animacoes_arma
 @export var shoot_particles: PackedScene
 @onready var dead_eye_cooldown = $dead_eye_cooldown
+@onready var Player_gui = $Player_gui
 var cooldowns = false
 var dead_eye = false
 func _physics_process(delta: float) -> void:
@@ -74,7 +77,7 @@ func tomar_dano(inimigo_dano):
 		
 func _dead_eye():
 	if dead_eye:
-		dead_eye_cooldown.start(1)
+		dead_eye_cooldown.start(5)
 		Global.Game_speed = 0.2
 		deadeye_effect.visible = true
 		anim_dead_eye.play("dead_eye")
