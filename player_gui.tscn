@@ -1,9 +1,40 @@
 [gd_scene format=3 uid="uid://b1wcmn53omeob"]
 
-[ext_resource type="Texture2D" uid="uid://d31gjgvjxw2y2" path="res://assets/image-removebg-preview (4).png" id="1_ogtmc"]
+[ext_resource type="Texture2D" uid="uid://qhe1513n7qat" path="res://assets/Content/SPRITES_PLAYER_HUD.png" id="1_ogtmc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogtmc"]
+bg_color = Color(6.165549e-05, 0.20258725, 0.628361, 1)
 
 [node name="Player_gui" type="CanvasLayer" unique_id=1388732318]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=31239705]
-scale = Vector2(0.4, 0.4)
+[node name="player_status" type="Node2D" parent="." unique_id=45296788]
+position = Vector2(166, 596)
+scale = Vector2(0.5, 0.5)
+
+[node name="max_life" type="Sprite2D" parent="player_status" unique_id=493242315]
+position = Vector2(-200, 0)
 texture = ExtResource("1_ogtmc")
+region_enabled = true
+region_rect = Rect2(1307, 90, 193, 186)
+
+[node name="max_dead_eye" type="Sprite2D" parent="player_status" unique_id=45887017]
+position = Vector2(200, 0)
+texture = ExtResource("1_ogtmc")
+region_enabled = true
+region_rect = Rect2(1307, 700, 193, 183)
+
+[node name="max_energy" type="Sprite2D" parent="player_status" unique_id=1273978993]
+texture = ExtResource("1_ogtmc")
+region_enabled = true
+region_rect = Rect2(1306, 392, 195, 188)
+
+[node name="StaminaBar" type="ProgressBar" parent="." unique_id=1843326175]
+offset_left = 813.0
+offset_top = 613.0
+offset_right = 1479.0
+offset_bottom = 653.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/background = SubResource("StyleBoxFlat_ogtmc")
+max_value = 0.0
+step = 1.0
+show_percentage = false

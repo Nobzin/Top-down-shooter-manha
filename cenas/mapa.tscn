@@ -48,7 +48,5 @@ position = Vector2(-1950, -1231)
 [node name="ROUND_HUD" parent="." unique_id=798620586 instance=ExtResource("6_y6ojl")]
 
 [node name="Player_gui" parent="." unique_id=1388732318 instance=ExtResource("6_fw2ke")]
-offset = Vector2(130, 700)
-transform = Transform2D(1, 0, 0, 1, 130, 700)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,14 +1,19 @@
 extends CharacterBody2D
 
-const SPEED = 1200
+var SPEED = 1200
 const JUMP_VELOCITY = -400.0
 var vida = 100
 var dano_tomado = 0
 var dano = 30
+var dano_controle = dano
 @onready var status_player = $status
 @onready var status_pos = $Marker2D
 var direcao = Vector2.ZERO
 var dead_eye_timer = 0.0
+var max_speed = 1500
+var stamina = 100
+var correndo = false
+
 @onready var deadeye_effect = $CanvasLayer/dead_eyeeffect
 @onready var anim_dead_eye = $CanvasLayer/dead_eye_anim
 @onready var ponta_arma = $ponta_da_arma
@@ -18,13 +23,15 @@ var dead_eye_timer = 0.0
 @onready var arma_animation = $Animacoes_arma
 @export var shoot_particles: PackedScene
 @onready var dead_eye_cooldown = $dead_eye_cooldown
-@onready var Player_gui = $Player_gui
+@onready var Player_gui = $"../Player_gui"
+
+
 var cooldowns = false
 var dead_eye = false
 func _physics_process(delta: float) -> void:
 	mover()
 	rotacao()
-
+	correr(delta)
 	move_and_slide()
 
 func mover():
@@ -38,15 +45,15 @@ func rotacao():
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("atirar") and cooldowns == false:
-		if dead_eye:
-			dead_eye = false
-			_dead_eye()
+
 		disparar()
-	elif event.is_action_pressed("Dead_eye"):
+	elif event.is_action_pressed("Dead_eye") and  ! dead_eye:
+		print("Botão Dead Eye apertado")
 		dead_eye = true
 		_dead_eye()
 	
 func disparar():
+	print(dano)
 	cooldowns = true
 	cooldown.start(0.01)
 	
@@ -57,9 +64,16 @@ func disparar():
 	nova_bala.global_position = ponta_arma.global_position
 	nova_bala.direction = (ponta_arma.global_position - global_position).normalized()
 	nova_bala.dano = dano
-	if dead_eye:
-		nova_bala.dano *= 100
 	get_tree().current_scene.add_child(nova_bala)
+	if dead_eye:
+		dead_eye = false
+		dead_eye_cooldown.stop()
+
+		Global.Game_speed = 1
+		deadeye_effect.visible = false
+		dano = dano_controle
+	
+	
 	sound_effects.play()
 	await get_tree().create_timer(0.63).timeout
 	sound_effects.stop()
@@ -73,17 +87,42 @@ func tomar_dano(inimigo_dano):
 	vida -= dano_tomado
 	print(vida)
 	if vida <=0:
+		get_tree().reload_current_scene()
+		Global.Round = 0
+		Global.kills = 0
+		Global.round_limit = randi_range(20,30)
 		self.queue_free()
 		
 func _dead_eye():
 	if dead_eye:
-		dead_eye_cooldown.start(5)
+		print("Entrou no Dead Eye")
+		dano = dano_controle *100
 		Global.Game_speed = 0.2
 		deadeye_effect.visible = true
 		anim_dead_eye.play("dead_eye")
+		dead_eye_cooldown.start(5)
 		await dead_eye_cooldown.timeout
 		dead_eye = false
-		_dead_eye()
+	Global.Game_speed = 1
+	print("Dano controle:", dano_controle)
+	deadeye_effect.visible = false
+	dano = dano_controle
+	print("Dano virou:", dano)
+func correr(delta):
+	var stamina_bar = Player_gui.get_node("StaminaBar")
+	if Input.is_action_pressed("correr") and stamina >0:
+		correndo = true
+		stamina_bar.max_value = 100
+		stamina -= 10 * delta
+		stamina_bar.value = stamina
+		SPEED +=50
+		
+		if SPEED >= max_speed:
+			SPEED = max_speed
 	else:
-		Global.Game_speed = 1
-		deadeye_effect.visible = false
+		correndo = false
+		if not correndo:
+			SPEED = 1200
+			stamina += 10 * delta
+			stamina_bar.value = stamina
+		

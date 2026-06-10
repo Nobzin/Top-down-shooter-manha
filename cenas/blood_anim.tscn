@@ -737,6 +737,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_3jr6v"]
 font_color = Color(1, 0, 0, 1)
+outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_2xbws"]

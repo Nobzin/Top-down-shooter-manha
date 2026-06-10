@@ -67,7 +67,6 @@ func inimigo_tomar_dano(position , dano):
 	sangue.damage_Anim.text = str(dano_tomado)
 	sangue.global_position = position
 	sangue.play(str(randi_range(1,5)))
-	print(vida)
 	if vida <=0:
 		morto = true
 		velocity = Vector2.ZERO

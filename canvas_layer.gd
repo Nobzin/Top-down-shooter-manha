@@ -13,3 +13,4 @@ func _process(delta: float) -> void:
 		last_kill = Global.kills
 	round_update.text = "ROUND - " + str(Global.Round)
 	round_limit.text = "OBJECTIVE - " + str(Global.round_limit)
+	

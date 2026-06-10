@@ -20,8 +20,7 @@ func round_over():
 		Global.Round +=1
 		Global.round_limit *= randi_range(2,5)
 		Global.round_end = false
-	print(Global.round_limit)
-	print(Global.kills)
+	
 		
 func _process(delta: float) -> void:
 	round_over()	

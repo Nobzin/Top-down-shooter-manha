@@ -411,10 +411,10 @@ libraries/ = SubResource("AnimationLibrary_ekwcj")
 stream = ExtResource("9_hjbd6")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=461176105]
-offset_left = -229.0
-offset_top = 565.0
-offset_right = 971.0
-offset_bottom = 615.0
+offset_left = -229.00002
+offset_top = 178.97327
+offset_right = 186.39275
+offset_bottom = 228.97327
 rotation = -1.5707964
 theme_override_styles/fill = SubResource("StyleBoxFlat_n5rp5")
 max_value = 0.0
