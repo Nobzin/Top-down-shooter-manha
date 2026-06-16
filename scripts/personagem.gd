@@ -6,6 +6,8 @@ var vida = 100
 var dano_tomado = 0
 var dano = 30
 var dano_controle = dano
+
+
 @onready var status_player = $status
 @onready var status_pos = $Marker2D
 var direcao = Vector2.ZERO
@@ -56,15 +58,18 @@ func disparar():
 	print(dano)
 	cooldowns = true
 	cooldown.start(0.01)
+	var quantidade_tiros = 7
+	var espalhamento = 30.0
 	
-	var nova_particula = shoot_particles.instantiate()
-	nova_particula.position = ponta_arma.position
-	add_child(nova_particula)
-	var nova_bala = bala_cena.instantiate()
-	nova_bala.global_position = ponta_arma.global_position
-	nova_bala.direction = (ponta_arma.global_position - global_position).normalized()
-	nova_bala.dano = dano
-	get_tree().current_scene.add_child(nova_bala)
+	for i in quantidade_tiros:
+		var nova_bala = bala_cena.instantiate()
+		nova_bala.global_position= ponta_arma.global_position
+		var direcao = (ponta_arma.global_position - global_position).normalized()
+		var angulo = deg_to_rad(randf_range(-espalhamento / 2.0,espalhamento / 2.0))
+		nova_bala.direction = direcao.rotated(angulo)
+		nova_bala.posicao_inicial = ponta_arma.global_position
+		nova_bala.dano_base = dano
+		get_tree().current_scene.add_child(nova_bala)
 	if dead_eye:
 		dead_eye = false
 		dead_eye_cooldown.stop()
@@ -110,19 +115,15 @@ func _dead_eye():
 	print("Dano virou:", dano)
 func correr(delta):
 	var stamina_bar = Player_gui.get_node("StaminaBar")
+	stamina_bar.max_value = 100
 	if Input.is_action_pressed("correr") and stamina >0:
 		correndo = true
-		stamina_bar.max_value = 100
 		stamina -= 10 * delta
 		stamina_bar.value = stamina
-		SPEED +=50
-		
-		if SPEED >= max_speed:
-			SPEED = max_speed
+		SPEED =1600
 	else:
 		correndo = false
-		if not correndo:
-			SPEED = 1200
-			stamina += 10 * delta
-			stamina_bar.value = stamina
-		
+		stamina += 5 * delta
+		stamina = min(stamina,100)
+		stamina_bar.value = stamina
+		SPEED = 1200

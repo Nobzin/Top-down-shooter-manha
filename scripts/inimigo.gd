@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var death_anim = $death_anim
 @onready var damage_anim = preload("res://cenas/blood_anim.tscn")
 @onready var barra_vida = $ProgressBar
+@onready var collision = $colisao_inimigo
 var direction:= Vector2.ZERO
 var dano = 10
 var dano_tomado = 0
@@ -60,15 +61,18 @@ func _on_ataque_area_body_exited(body: CharacterBody2D) -> void:
 		ataque_collision.disabled = true
 
 func inimigo_tomar_dano(position , dano):
+	if morto:
+		return
 	dano_tomado = dano
 	vida -= dano_tomado
 	var sangue = damage_anim.instantiate()
 	get_parent().add_child(sangue)
-	sangue.damage_Anim.text = str(dano_tomado)
+	sangue.damage_Anim.text = str(int(dano_tomado))
 	sangue.global_position = position
 	sangue.play(str(randi_range(1,5)))
 	if vida <=0:
 		morto = true
+		collision.queue_free()
 		velocity = Vector2.ZERO
 		enemy_sound.play()
 		death_anim.play("death1")
